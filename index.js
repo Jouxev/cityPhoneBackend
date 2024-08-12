@@ -30,6 +30,7 @@ app.use(cors())
 // Routes 
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/product', userRoutes);
 
 app.use((err, req, res, next) => {
     const status = err.status || 500;
