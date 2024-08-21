@@ -24,4 +24,10 @@ const addProduct  = async (req, res, next) => {
 
 }
 
-export  { getProduct, getAllProduct, addProduct}
+const deleteProduct = async(req, res, next) => {
+    if( await Product.findByIdAndDelete(req.params.id)){
+        res.status(200).json('product deleted')
+    }
+}
+
+export  { getProduct, getAllProduct, addProduct, deleteProduct}
